@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+{% block header_title %}
+<head>
+    <title>Competencia 4 (Python)</title>
+</head>
+{% endblock %}
+
+
+{% block content %}
+<body>
+    <h1 style="border: 2px solid seagreen;">Curriculim Viatae</h1>
+    <h2 style="background-color:cornflowerblue;">Datos Personales</h2>
+    <img src="HS.png" height="200" /> <!--No pude encontrar el error que me impide mostrar la imagen-->
+    <br>
+    {{ nombre }}
+    <br>
+    {{ primer_apellido }}
+    <br>
+    {{ segundo_apellido }}
+    <br>
+    {{ fecha_de_nacimiento }}
+    <br>
+    {{ celular }}
+    <br>
+    {{ correo }}
+    <br>
+    {{ domicilio }}
+    <br>
+    {{ género }}
+    <br>
+    {{ objetivo }}
+    <br>
+    {{ salario_esperado }}
+    <br>
+    <hr>
+    <h2 style="background-color:cornflowerblue;">Habilidades</h2>
+    {% for valor in habilidades %}
+         {{ valor }}<br>
+    {% endfor %}
+    <br>
+    <hr>
+    <h2 style="background-color:cornflowerblue;">Trabajos Anteriores</h2>
+    {{ lugar_trabajo }}
+    <br>
+    {{ año_inicio }}
+    <br>
+    {{ año_fin}}
+    <br>
+    {{ puesto }}
+    <br>
+    <br>
+    {{ lugar_trabajo2 }}
+    <br>
+    {{ año_inicio2 }}
+    <br>
+    {{ año_fin2 }}
+    <br>
+    {{ puesto2 }}
+    <br>
+    <hr>
+    <h3 style="background-color:darkorange">Estudios Recientes</h3>
+    <a target="_blank" href="https://www.universidad-une.com/plantel-torre-une-milenio">Licenciatura en Psicología</a>
+    <br>
+    <a target="_blank" href="https://auth.thincrs.com/">Python Básico</a>
+    <hr>
+    <h3 style="background-color:darkorange">Resumen Profesional</h3>
+    <p>Persona <span style="color: blue;">amable</span> y capaza de <span style="color: blueviolet;">adaptarse</span> a cada situación.
+    </p>
+    <hr>
+    <label for="Calificación">Calificación</label>
+    <input type="" id="Calificación" placeholder="0% - 100%">
+    <br>
+    <label for="Comentario">Comentario</label>
+    <br>
+    <textarea cols="50" rows="10" id="Comentario" placeholder="Ingrese Comentario"></textarea>
+</body>
+
+
+{% endblock %}
+</html>
