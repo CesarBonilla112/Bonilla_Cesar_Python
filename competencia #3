@@ -1,0 +1,49 @@
+from django.http import HttpResponse
+from django.views import View
+from django.shortcuts import render, redirect
+
+
+def index(request):
+    
+
+    return HttpResponse("Hola Mundo")
+
+class Inicio(View):
+    template_name ="index.html"
+    
+    def post(self,request):
+        return render(request)
+    
+    def get(self, request):
+        datos = {
+           "nombre" : "César Iván",
+           "primer_apellido" : "Bonilla",
+           "segundo_apellido" : "Cerda",
+           "fecha_de_nacimiento" : "12/01/1993",
+           "celular" : "33-17-41-63-33",
+           "correo" : "cesar.i.bonilla.c@gmail.com",
+           "domicilio" : "Loma Bonita Ejidal 518",
+           "género" : "Masculino",
+           "objetivo" : "Programador Jr",
+           "salario_esperado" : "$30,000"
+           }
+        skills = {
+            "habilidades" : ("Python Básico", "Microsoft Oficce", "Inglés (70%)", "HTML")
+
+        }
+        trabajos = {
+            "lugar_trabajo" : "Proporfit",
+            "año_inicio" : "2018",
+            "año_fin" : "2019",
+            "puesto" : "Analista de Datos",
+            "lugar_trabajo2" : "Teleperformance",
+            "año_inicio2" : "2016",
+            "año_fin2" : "2018",
+            "puesto2" : "Agente de Atención al Cliente"
+        }
+        dictmaster = {**datos, **skills, **trabajos}
+        
+        
+      #todo el contenido y calculo
+        
+        return render(request, self.template_name, dictmaster) 
